@@ -7,6 +7,18 @@ Search keywords: Agentic AI, Planner-Critic, Cross-Model Reflection, Evaluator-O
 - [Planner System Prompt](./planner-system-prompt.md): analysis, planning, implementation, and responding to feedback.
 - [Reviewer System Prompt](./reviewer-system-prompt.md): independent review, verification, and final acceptance.
 
+## Install via npx skill
+
+This repository can be packaged as a runnable CLI skill:
+
+```bash
+npx skill list
+npx skill planner
+npx skill reviewer
+```
+
+The `planner` and `reviewer` commands print the prompt contents directly so they can be copied into a model's system prompt or used as part of an automated workflow.
+
 ## How to Use
 
 1. Copy the contents of the code block in each file into the corresponding model's system prompt.
@@ -14,11 +26,11 @@ Search keywords: Agentic AI, Planner-Critic, Cross-Model Reflection, Evaluator-O
 3. Associate each review with a specific commit SHA or snapshot ID.
 4. Configure tool permissions: the Planner may modify code; the Reviewer may only read and run checks within an authorized environment.
 
-The Planner supports `phase=PLAN` and `phase=IMPLEMENT`. The Reviewer supports `phase=PLAN` and `phase=CODE`. After implementation, the orchestrator sets `phase=CODE` when submitting the artifact to the Reviewer.
+The Planner supports `phase=PLAN` and `phase=IMPLEMENT`. The Reviewer supports `phase=PLAN` and `phase=CODE`. After implementation, the orchestrator sets `phase=CODE` when submitting the artifact for review.
 
 ## Recommended Workflow
 
-Requirements → Planner creates a plan → Reviewer reviews the plan → Planner implements → Automated checks run → Reviewer reviews the code → Planner addresses findings → Reviewer performs final acceptance on the final revision.
+Requirements → Planner creates a plan → Reviewer reviews the plan → Planner implements → Automated checks run → Reviewer reviews the code → Planner addresses findings → Reviewer performs final acceptance.
 
 - Allow a maximum of three revision rounds per phase by default. When the limit is reached, report remaining issues without automatically approving the work.
 - If a disagreement persists across two rounds without new evidence, ask the user to decide.

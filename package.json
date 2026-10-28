@@ -1,0 +1,34 @@
+{
+  "name": "skill",
+  "version": "1.0.0",
+  "description": "Agentic coding prompts packaged as a runnable npx skill",
+  "license": "MIT",
+  "bin": {
+    "skill": "./index.js"
+  },
+  "files": [
+    "index.js",
+    "README.md",
+    "planner-system-prompt.md",
+    "reviewer-system-prompt.md"
+  ],
+  "keywords": [
+    "skill",
+    "copilot",
+    "agentic",
+    "planner",
+    "reviewer",
+    "system-prompt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anhtubui/agentic-coding-prompts.git"
+  },
+  "homepage": "https://github.com/anhtubui/agentic-coding-prompts",
+  "bugs": {
+    "url": "https://github.com/anhtubui/agentic-coding-prompts/issues"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
