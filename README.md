@@ -2,27 +2,60 @@
 
 Search keywords: Agentic AI, Planner-Critic, Cross-Model Reflection, Evaluator-Optimizer, code review, system prompt.
 
-## Prompts
+## Skills
 
-- [Planner System Prompt](./planner-system-prompt.md): analysis, planning, implementation, and responding to feedback.
-- [Reviewer System Prompt](./reviewer-system-prompt.md): independent review, verification, and final acceptance.
+- [Planner System Prompt](./skills/planner/SKILL.md): analysis, planning, implementation, and responding to feedback.
+- [Reviewer System Prompt](./skills/reviewer/SKILL.md): independent review, verification, and final acceptance.
 
-## Exact `npx skill` contract
+## Install with `npx skills`
 
-This repository is packaged as a CLI executable for the standard `npx skill` pattern:
+Install both skills from GitHub:
 
 ```bash
-npx skill
-npx skill list
-npx skill planner
-npx skill reviewer
+npx skills add anhtubui/agentic-coding-prompts --skill planner reviewer
 ```
 
-`npx skill` prints the command usage, `list` prints the available skills, and the `planner` / `reviewer` commands output the corresponding prompt text so they can be copied directly into a model system prompt or used in automation.
+Install either skill individually:
+
+```bash
+npx skills add anhtubui/agentic-coding-prompts --skill planner
+npx skills add anhtubui/agentic-coding-prompts --skill reviewer
+```
+
+Choose your coding agent when prompted. Add `-g` to install globally instead of
+in the current project, or `-a codex` to target Codex.
+
+Inspect the available skills before installing:
+
+```bash
+npx skills add anhtubui/agentic-coding-prompts --list
+```
+
+The repository uses the standard [skills directory layout](https://github.com/vercel-labs/skills/blob/main/docs/creating-skills.md):
+
+```text
+skills/
+├── planner/SKILL.md
+└── reviewer/SKILL.md
+```
+
+Each skill contains its own name, description, and complete instructions.
+Commit and push these files to GitHub to make them available through the commands
+above. No npm publication is required.
+
+For local discovery before publishing, run from this repository:
+
+```bash
+npx skills add . --list
+```
+
+The existing prompt-printing helper remains available locally with
+`node index.js planner`, `node index.js reviewer`, and `node index.js list`.
+It is separate from the `npx skills` installer.
 
 ## How to Use
 
-1. Copy the contents of the code block in each file into the corresponding model's system prompt.
+1. Install the desired skills, then invoke `planner` or `reviewer` through your coding agent's skill interface. For manual use, copy the instructions below the YAML frontmatter into the corresponding model's system prompt.
 2. Provide both models with the same original requirements, acceptance criteria, and repository constraints.
 3. Associate each review with a specific commit SHA or snapshot ID.
 4. Configure tool permissions: the Planner may modify code; the Reviewer may only read and run checks within an authorized environment.

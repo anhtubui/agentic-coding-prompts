@@ -1,7 +1,7 @@
 {
   "name": "skill",
   "version": "1.0.0",
-  "description": "Agentic coding prompts packaged for the exact npx skill CLI contract.",
+  "description": "Planner and reviewer agent skills installable from GitHub with npx skills.",
   "license": "MIT",
   "main": "index.js",
   "bin": {
@@ -10,8 +10,7 @@
   "files": [
     "index.js",
     "README.md",
-    "planner-system-prompt.md",
-    "reviewer-system-prompt.md"
+    "skills/"
   ],
   "keywords": [
     "skill",

@@ -4,8 +4,8 @@ const fs = require('fs');
 const path = require('path');
 
 const prompts = {
-  planner: 'planner-system-prompt.md',
-  reviewer: 'reviewer-system-prompt.md',
+  planner: 'skills/planner/SKILL.md',
+  reviewer: 'skills/reviewer/SKILL.md',
 };
 
 const usage = `Usage:
