@@ -7,17 +7,18 @@ Search keywords: Agentic AI, Planner-Critic, Cross-Model Reflection, Evaluator-O
 - [Planner System Prompt](./planner-system-prompt.md): analysis, planning, implementation, and responding to feedback.
 - [Reviewer System Prompt](./reviewer-system-prompt.md): independent review, verification, and final acceptance.
 
-## Install via npx skill
+## Exact `npx skill` contract
 
-This repository can be packaged as a runnable CLI skill:
+This repository is packaged as a CLI executable for the standard `npx skill` pattern:
 
 ```bash
+npx skill
 npx skill list
 npx skill planner
 npx skill reviewer
 ```
 
-The `planner` and `reviewer` commands print the prompt contents directly so they can be copied into a model's system prompt or used as part of an automated workflow.
+`npx skill` prints the command usage, `list` prints the available skills, and the `planner` / `reviewer` commands output the corresponding prompt text so they can be copied directly into a model system prompt or used in automation.
 
 ## How to Use
 

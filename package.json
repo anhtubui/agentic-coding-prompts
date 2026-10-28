@@ -1,8 +1,9 @@
 {
   "name": "skill",
   "version": "1.0.0",
-  "description": "Agentic coding prompts packaged as a runnable npx skill",
+  "description": "Agentic coding prompts packaged for the exact npx skill CLI contract.",
   "license": "MIT",
+  "main": "index.js",
   "bin": {
     "skill": "./index.js"
   },
